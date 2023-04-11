@@ -37,7 +37,7 @@ Clasa Bilet este o clasă abstractă din care vor fi derivate clasele BiletMuzeu
 ## Enum-uri
 
 Am definit și câteva enum-uri, cum ar fi InstitutiiEmitere (care specifică ce instituție a emis biletul - STB, METROREX, DPCN, IJC), TipTransport (care 
-specifică tipul mijlocului de transport, cum ar fi autobuz, tramvai sau metrou).
+specifică tipul mijlocului de transport, cum ar fi autobuz, tramvai sau metrou). Acestea se regăsesc în pachetul Utile.
 
 ## Excepții
 
