@@ -1,8 +1,5 @@
 import Model.*;
-import Service.BiletService;
 import Service.Impl.*;
-import Service.MijlocDeTransportService;
-import Service.UtilizatorService;
 import Utile.InstitutiiEmitere;
 import Utile.TipTransport;
 
@@ -24,7 +21,7 @@ public class Main {
         Exponat exponatVG2 = new Exponat("Noapte instelata", "Una dintre cele mai celebre picturi ale artistului Vincent Van Gogh", "Olanda", "1889");
         Exponat exponatMG = new Exponat("Sfanta Familie cu Sfantul Ioan Botezatorul", "O lucrare reprezentativa a pictorului Michelangelo Merisi da Caravaggio", "Italia", "1605");
         Exponat exponatPB = new Exponat("David", "Una dintre cele mai faimoase sculpturi realizate de artistul renascentist Michelangelo", "Italia", "1501");
-        Exponat exponatPC = new Exponat("Cap de femeie", "O lucrare semnificativa a artistei Pablo Picasso", "Spania", "1909");
+        Exponat exponatPC = new Exponat("Cap de femeie", "O lucrare semnificativa a artistului Pablo Picasso", "Spania", "1909");
 
         exponateService1.addExponat(exponatVG1);
         exponateService1.addExponat(exponatVG2);
