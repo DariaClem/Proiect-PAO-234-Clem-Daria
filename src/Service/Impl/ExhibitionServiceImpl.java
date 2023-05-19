@@ -38,7 +38,7 @@ public class ExhibitionServiceImpl implements ExhibitionService {
     @Override
     public void addExhibition(String[] exhibition) throws Exception {
         boolean validExhibition = true;
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         int id = Integer.parseInt(exhibition[0]);
         String name = exhibition[1];
