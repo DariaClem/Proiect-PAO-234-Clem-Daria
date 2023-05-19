@@ -3,6 +3,7 @@ package Model;
 import java.util.Date;
 
 public class Exponat {
+    private int id;
     private String denumire;
     private String descriere;
     private String taraOrigine;
@@ -11,11 +12,20 @@ public class Exponat {
     public Exponat() {
     }
 
-    public Exponat(String denumire, String descriere, String taraOrigine, String dataOrigine) {
+    public Exponat(int id, String denumire, String descriere, String taraOrigine, String dataOrigine) {
+        this.id = id;
         this.denumire = denumire;
         this.descriere = descriere;
         this.taraOrigine = taraOrigine;
         this.dataOrigine = dataOrigine;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDenumire() {
@@ -53,10 +63,11 @@ public class Exponat {
     @Override
     public String toString() {
         return "Exponat{" +
-                "denumire='" + denumire + '\'' +
+                "id=" + id +
+                ", denumire='" + denumire + '\'' +
                 ", descriere='" + descriere + '\'' +
                 ", taraOrigine='" + taraOrigine + '\'' +
-                ", dataOrigine=" + dataOrigine +
+                ", dataOrigine='" + dataOrigine + '\'' +
                 '}';
     }
 }

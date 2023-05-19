@@ -1,9 +1,11 @@
 package Model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Utilizator implements Comparable<Utilizator> {
+    private int id;
     private String nume;
     private String prenume;
     private String CNP;
@@ -14,11 +16,21 @@ public class Utilizator implements Comparable<Utilizator> {
     public Utilizator() {
     }
 
-    public Utilizator(String nume, String prenume, String CNP, String adresa) {
+    public Utilizator(int id, String nume, String prenume, String CNP, String adresa) {
+        this.id = id;
         this.nume = nume;
         this.prenume = prenume;
         this.CNP = CNP;
         this.adresa = adresa;
+        this.bilete = new ArrayList<>();
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNume() {
@@ -68,7 +80,8 @@ public class Utilizator implements Comparable<Utilizator> {
     @Override
     public String toString() {
         return "Utilizator{" +
-                "nume='" + nume + '\'' +
+                "id=" + id +
+                ", nume='" + nume + '\'' +
                 ", prenume='" + prenume + '\'' +
                 ", CNP='" + CNP + '\'' +
                 ", adresa='" + adresa + '\'' +

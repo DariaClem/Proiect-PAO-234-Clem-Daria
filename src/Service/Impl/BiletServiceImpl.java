@@ -1,10 +1,11 @@
 package Service.Impl;
 
-import Exceptii.InvalidPretBilet;
+import Exceptii.InvalidPretBiletException;
 import Exceptii.NuSuntBileteException;
 import Exceptii.NuSuntExponateException;
 import Model.Bilet;
 import Service.BiletService;
+import Utile.AuditSingleton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +21,9 @@ public class BiletServiceImpl implements BiletService {
 
         try {
             if (!validarePretBilet(bilet.getPret())) {
-                throw new InvalidPretBilet("Biletul nu poate fi gratis.");
+                throw new InvalidPretBiletException("Biletul nu poate fi gratis.");
             }
-        } catch (InvalidPretBilet exceptie) {
+        } catch (InvalidPretBiletException exceptie) {
             biletValid = false;
             System.out.println(exceptie.getMessage());
         }
@@ -30,6 +31,7 @@ public class BiletServiceImpl implements BiletService {
         if (bilete == null)
             bilete = new ArrayList<>();
         bilete.add(bilet);
+        AuditSingleton.INSTANCE.writeAction("Adaugare bilet");
     }
 
     @Override
@@ -40,6 +42,7 @@ public class BiletServiceImpl implements BiletService {
         } catch (NuSuntBileteException exceptie) {
             System.out.println(exceptie.getMessage());
         }
+        AuditSingleton.INSTANCE.writeAction("Get Bilet");
         return bilete;
     }
 
@@ -56,6 +59,7 @@ public class BiletServiceImpl implements BiletService {
         } catch (NuSuntBileteException exceptie) {
             System.out.println(exceptie.getMessage());
         }
+        AuditSingleton.INSTANCE.writeAction("Pret total bilete");
         return total;
     }
 }

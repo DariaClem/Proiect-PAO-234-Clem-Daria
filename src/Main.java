@@ -1,11 +1,13 @@
 import Model.*;
 import Service.Impl.*;
+import Utile.GestionareFisiereSingleton;
 import Utile.InstitutiiEmitere;
 import Utile.TipTransport;
 
 import java.util.*;
 
 public class Main {
+    /*
     public static void main(String[] args) throws Exception {
         // Service-uri
         ExponateServiceImpl exponateService1 = new ExponateServiceImpl();
@@ -59,7 +61,7 @@ public class Main {
         dataFinal = calendar.getTime();
 
         // A doua expozitie corespunzatoare primului muzeu
-        Expozitie expozitie2 = new Expozitie("Expozitie Clasics", dataInceput, dataFinal, exponate2);
+        Expozitie expozitie2 = new Expozitie("Expozitie Classics", dataInceput, dataFinal, exponate2);
 
         expozitieService.addExpozitie(expozitie1);
         expozitieService.addExpozitie(expozitie2);
@@ -126,5 +128,22 @@ public class Main {
         utilizatorService.deleteUtilizator(utilizator2);
         System.out.println(utilizatorService.getUtilizatori());
 
+    }
+    */
+    public static void main(String[] args) throws Exception {
+        GestionareFisiereSingleton singleton = GestionareFisiereSingleton.INSTANCE;
+
+        String csvFile = "fisiereCSV/utilizator.csv";
+        List<String[]> content = singleton.readFromCsv(csvFile);
+
+        String destFile = "fisiereCSV/test.csv";
+        singleton.writeInCsv(destFile, content);
+
+       /* for (String[] row : content) {
+            for (String value : row) {
+                System.out.print(value + " ");
+            }
+            System.out.println();
+        }*/
     }
 }

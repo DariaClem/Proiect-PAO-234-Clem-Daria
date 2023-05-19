@@ -5,6 +5,7 @@ import Utile.TipTransport;
 import java.util.List;
 
 public class MijlocDeTransport {
+    private int id;
     private TipTransport tipTransport;
     private String numarInmatriculare;
     private int numarRuta;
@@ -16,7 +17,8 @@ public class MijlocDeTransport {
     public MijlocDeTransport() {
     }
 
-    public MijlocDeTransport(TipTransport tipTransport, String numarInmatriculare, int numarRuta, List<String> ruta, int oraInceput, int oraSfarsit, boolean accesibilitate) {
+    public MijlocDeTransport(int id, TipTransport tipTransport, String numarInmatriculare, int numarRuta, List<String> ruta, int oraInceput, int oraSfarsit, boolean accesibilitate) {
+        this.id = id;
         this.tipTransport = tipTransport;
         this.numarInmatriculare = numarInmatriculare;
         this.numarRuta = numarRuta;
@@ -24,6 +26,14 @@ public class MijlocDeTransport {
         this.oraInceput = oraInceput;
         this.oraSfarsit = oraSfarsit;
         this.accesibilitate = accesibilitate;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public TipTransport getTipTransport() {
@@ -84,8 +94,10 @@ public class MijlocDeTransport {
 
     @Override
     public String toString() {
-        return "Autobuz{" +
-                "numarInmatriculare='" + numarInmatriculare + '\'' +
+        return "MijlocDeTransport{" +
+                "id=" + id +
+                ", tipTransport=" + tipTransport +
+                ", numarInmatriculare='" + numarInmatriculare + '\'' +
                 ", numarRuta=" + numarRuta +
                 ", ruta=" + ruta +
                 ", oraInceput=" + oraInceput +

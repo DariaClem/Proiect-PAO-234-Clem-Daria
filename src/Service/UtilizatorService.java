@@ -14,4 +14,5 @@ public interface UtilizatorService {
     List<Utilizator> getUtilizatori() throws Exception;
 
     Utilizator getUtilizator(String nume, String prenume) throws Exception;
+    Utilizator getUtilizator(int id) throws Exception;
 }

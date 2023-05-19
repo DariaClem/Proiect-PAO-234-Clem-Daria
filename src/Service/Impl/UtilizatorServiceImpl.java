@@ -6,6 +6,7 @@ import Exceptii.NuEsteUtilizatorulException;
 import Exceptii.NuSuntUtilizatoriException;
 import Model.Utilizator;
 import Service.UtilizatorService;
+import Utile.AuditSingleton;
 
 import java.util.*;
 
@@ -38,6 +39,7 @@ public class UtilizatorServiceImpl implements UtilizatorService {
                 utilizatori = new ArrayList<>();
             }
             utilizatori.add(utilizator);
+            AuditSingleton.INSTANCE.writeAction("Adaugare utilizator");
         }
     }
 
@@ -55,9 +57,10 @@ public class UtilizatorServiceImpl implements UtilizatorService {
                 }
             }
 
-            if (gasit)
+            if (gasit) {
                 utilizatori.remove(utilizator);
-            else
+                AuditSingleton.INSTANCE.writeAction("Stergere utilizator");
+            } else
                 throw new NuEsteUtilizatorulException("Utilizatorul cautat nu a fost gasit");
 
         } catch (NuSuntUtilizatoriException | NuEsteUtilizatorulException exceptie) {
@@ -73,6 +76,7 @@ public class UtilizatorServiceImpl implements UtilizatorService {
 
             Utilizator utilizatorGasit = getUtilizator(nume, prenume);
             utilizatori.remove(utilizatorGasit);
+            AuditSingleton.INSTANCE.writeAction("Stergere utilizator");
 
         } catch (NuSuntUtilizatoriException | NuEsteUtilizatorulException exceptie) {
             System.out.println(exceptie.getMessage());
@@ -88,6 +92,7 @@ public class UtilizatorServiceImpl implements UtilizatorService {
         } catch (NuSuntUtilizatoriException exceptie) {
             System.out.println(exceptie.getMessage());
         }
+        AuditSingleton.INSTANCE.writeAction("Get utilizator");
         return utilizatori;
     }
 
@@ -111,6 +116,31 @@ public class UtilizatorServiceImpl implements UtilizatorService {
         } catch (NuSuntUtilizatoriException | NuEsteUtilizatorulException exceptie) {
             System.out.println(exceptie.getMessage());
         }
+        AuditSingleton.INSTANCE.writeAction("Get utilizator după nume");
+        return utilizatorGasit;
+    }
+
+    @Override
+    public Utilizator getUtilizator(int id) throws Exception {
+        Utilizator utilizatorGasit = new Utilizator();
+        boolean gasit = false;
+        try {
+            if (utilizatori == null) {
+                throw new NuSuntUtilizatoriException("Lista de utilizatori este goala");
+            }
+            for (Utilizator utilizator : utilizatori) {
+                if (id == utilizator.getId()) {
+                    utilizatorGasit = utilizator;
+                    gasit = true;
+                }
+            }
+            if (!gasit) {
+                throw new NuEsteUtilizatorulException("Utilizatorul cautat nu a fost gasit");
+            }
+        } catch (NuSuntUtilizatoriException | NuEsteUtilizatorulException exceptie) {
+            System.out.println(exceptie.getMessage());
+        }
+        AuditSingleton.INSTANCE.writeAction("Get utilizator după id");
         return utilizatorGasit;
     }
 }

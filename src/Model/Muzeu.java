@@ -1,10 +1,12 @@
 package Model;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class Muzeu {
+    private int id;
     private String denumire;
     private String adresa;
     private Set<Expozitie> expozitii;
@@ -12,10 +14,19 @@ public class Muzeu {
     public Muzeu() {
     }
 
-    public Muzeu(String denumire, String adresa, Set<Expozitie> expozitii) {
+    public Muzeu(int id, String denumire, String adresa) {
+        this.id = id;
         this.denumire = denumire;
         this.adresa = adresa;
-        this.expozitii = expozitii;
+        this.expozitii = new HashSet<>();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDenumire() {
@@ -49,6 +60,7 @@ public class Muzeu {
     @Override
     public String toString() {
         return "Muzeu{" +
+                "id=" + id + '\'' +
                 "denumire='" + denumire + '\'' +
                 ", adresa='" + adresa + '\'' +
                 ", expozitii=" + expozitii +

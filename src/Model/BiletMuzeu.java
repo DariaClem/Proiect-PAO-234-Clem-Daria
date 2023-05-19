@@ -6,22 +6,22 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class BiletMuzeu extends Bilet {
-    private Muzeu muzeu;
+    private int idMuzeu;
 
     public BiletMuzeu() {
     }
 
-    public BiletMuzeu(String oras, float pret, Date data, InstitutiiEmitere institutieEmitere, Muzeu muzeu) {
+    public BiletMuzeu(String oras, float pret, Date data, InstitutiiEmitere institutieEmitere, int idMuzeu) {
         super(oras, pret, data, institutieEmitere);
-        this.muzeu = muzeu;
+        this.idMuzeu = idMuzeu;
     }
 
-    public Muzeu getMuzeu() {
-        return muzeu;
+    public int getIdMuzeu() {
+        return idMuzeu;
     }
 
-    public void setMuzeu(Muzeu muzeu) {
-        this.muzeu = muzeu;
+    public void setIdMuzeu(int idMuzeu) {
+        this.idMuzeu = idMuzeu;
     }
 
     public boolean esteValabil() {
@@ -32,6 +32,6 @@ public class BiletMuzeu extends Bilet {
 
     @Override
     public void detaliiBilet() {
-        System.out.println("Bilet pentru muzeul: " + muzeu + ", " + super.toString());
+        System.out.println("Bilet pentru muzeul cu id-ul: " + idMuzeu + ", " + super.toString());
     }
 }

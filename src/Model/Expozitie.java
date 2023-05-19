@@ -1,9 +1,11 @@
 package Model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Expozitie {
+    private int id;
     private String denumire;
     private Date dataInceput;
     private Date dataFinal;
@@ -12,11 +14,20 @@ public class Expozitie {
     public Expozitie() {
     }
 
-    public Expozitie(String denumire, Date dataInceput, Date dataFinal, List<Exponat> exponate) {
+    public Expozitie(int id, String denumire, Date dataInceput, Date dataFinal) {
+        this.id = id;
         this.denumire = denumire;
         this.dataInceput = dataInceput;
         this.dataFinal = dataFinal;
-        this.exponate = exponate;
+        this.exponate = new ArrayList<>();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDenumire() {
@@ -58,7 +69,8 @@ public class Expozitie {
     @Override
     public String toString() {
         return "Expozitie{" +
-                "denumire='" + denumire + '\'' +
+                "id=" + id +
+                ", denumire='" + denumire + '\'' +
                 ", dataInceput=" + dataInceput +
                 ", dataFinal=" + dataFinal +
                 ", exponate=" + exponate +
