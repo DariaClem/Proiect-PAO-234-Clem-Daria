@@ -36,3 +36,11 @@ public void writeAction(String actionName)
 ```Java
 AuditSingleton.INSTANCE.writeAction("Add user");
 ```
+- exemplu de afișare
+```Java
+Add user,19-05-2023 09:05
+```
+
+## Alte îmbunătățiri
+
+Față de prima parte a proiectului, am uniformizat codul prin schimbarea tuturor denumirilor variabilelor, funcțiilor, claselor și pachetelor în engleză. De asemenea, am adăugat funcții noi în Service-uri pentru a putea returna un obiect în funcție de id-ul acestora, întrucât am adăugat tutoror claselor data membră „id” și id-ul obiectului de care aparțin (de exemplu, un exponat are un id propriu și un id al expoziției de care aparține). În final, am extins și pachetul Exceptions cu noi excepții.
