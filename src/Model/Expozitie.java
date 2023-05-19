@@ -9,17 +9,27 @@ public class Expozitie {
     private String denumire;
     private Date dataInceput;
     private Date dataFinal;
+    private int idMuzeu;
     private List<Exponat> exponate;
 
     public Expozitie() {
     }
 
-    public Expozitie(int id, String denumire, Date dataInceput, Date dataFinal) {
+    public Expozitie(int id, String denumire, Date dataInceput, Date dataFinal, int idMuzeu) {
         this.id = id;
         this.denumire = denumire;
         this.dataInceput = dataInceput;
         this.dataFinal = dataFinal;
+        this.idMuzeu = idMuzeu;
         this.exponate = new ArrayList<>();
+    }
+
+    public int getIdMuzeu() {
+        return idMuzeu;
+    }
+
+    public void setIdMuzeu(int idMuzeu) {
+        this.idMuzeu = idMuzeu;
     }
 
     public int getId() {
@@ -62,7 +72,7 @@ public class Expozitie {
         this.exponate = exponate;
     }
 
-    public void addExponate(Exponat exponat) {
+    public void addExponat(Exponat exponat) {
         this.exponate.add(exponat);
     }
 
@@ -73,6 +83,7 @@ public class Expozitie {
                 ", denumire='" + denumire + '\'' +
                 ", dataInceput=" + dataInceput +
                 ", dataFinal=" + dataFinal +
+                ", idMuzeu=" + idMuzeu +
                 ", exponate=" + exponate +
                 '}';
     }

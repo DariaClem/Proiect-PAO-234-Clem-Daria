@@ -44,6 +44,38 @@ public class UtilizatorServiceImpl implements UtilizatorService {
     }
 
     @Override
+    public void addUtilizator(String[] utilizator) throws Exception {
+        boolean utilizatorValid = true;
+
+        int id = Integer.parseInt(utilizator[0]);
+        String nume = utilizator[1];
+        String prenume = utilizator[2];
+        String cnp = utilizator[3];
+        String adresa = utilizator[4];
+
+        try {
+            if (!validareCNP(cnp)) {
+                throw new InvalidCNPException("CNP-ul trebuie sa contina 13 cifre!");
+            }
+
+            if (!validareNumePrenume(nume, prenume)) {
+                throw new InvalidNumeException("Numele si prenumele nu pot contine cifre!");
+            }
+        } catch (InvalidCNPException | InvalidNumeException exceptie) {
+            utilizatorValid = false;
+            System.out.println(exceptie.getMessage());
+        }
+
+        if (utilizatorValid) {
+            if (utilizatori == null) {
+                utilizatori = new ArrayList<>();
+            }
+            utilizatori.add(new Utilizator(id, nume, prenume, cnp, adresa));
+            AuditSingleton.INSTANCE.writeAction("Adaugare utilizator");
+        }
+    }
+
+    @Override
     public void deleteUtilizator(Utilizator utilizator) throws Exception {
         try {
             if (utilizatori == null)

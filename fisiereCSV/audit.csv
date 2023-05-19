@@ -1,21 +1,116 @@
-Read from CSV file fisiereCSV/exponate.csv,19-40-2023 01:40
-Read from CSV file fisiereCSV/exponate.csv,19-40-2023 01:40
-Read from CSV file fisiereCSV/exponate.csv,19-41-2023 01:41
-Read from CSV file fisiereCSV/exponate.csv,19-41-2023 01:41
-Read from CSV file fisiereCSV/exponate.csv,19-42-2023 01:42
-Read from CSV file fisiereCSV/exponate.csv,19-42-2023 01:42
-Read from CSV file fisiereCSV/exponate.csv,19-44-2023 01:44
-Read from CSV file fisiereCSV/exponate.csv,19-05-2023 01:53
-Write in CSV file fisiereCSV/test.csv,19-05-2023 01:53
-Read from CSV file fisiereCSV/exponate.csv,19-05-2023 01:56
-Write in CSV file fisiereCSV/test.csv,19-05-2023 01:56
-Read from CSV file fisiereCSV/exponate.csv,19-05-2023 01:56
-Write in CSV file fisiereCSV/test.csv,19-05-2023 01:56
-Read from CSV file fisiereCSV/utilizator.csv,19-05-2023 01:57
-Write in CSV file fisiereCSV/test.csv,19-05-2023 01:57
-Read from CSV file fisiereCSV/utilizator.csv,19-05-2023 01:57
-Write in CSV file fisiereCSV/test.csv,19-05-2023 01:57
-Read from CSV file fisiereCSV/utilizator.csv,19-05-2023 01:58
-Write in CSV file fisiereCSV/test.csv,19-05-2023 01:58
-Read from CSV file fisiereCSV/utilizator.csv,19-05-2023 02:13
-Write in CSV file fisiereCSV/test.csv,19-05-2023 02:13
+Read from CSV file fisiereCSV/utilizatori.csv,19-05-2023 06:55
+Validare CNP utilizator,19-05-2023 06:55
+Validare nume utilizator,19-05-2023 06:55
+Adaugare utilizator,19-05-2023 06:55
+Validare CNP utilizator,19-05-2023 06:55
+Validare nume utilizator,19-05-2023 06:55
+Adaugare utilizator,19-05-2023 06:55
+Validare CNP utilizator,19-05-2023 06:55
+Validare nume utilizator,19-05-2023 06:55
+Adaugare utilizator,19-05-2023 06:55
+Validare CNP utilizator,19-05-2023 06:55
+Validare nume utilizator,19-05-2023 06:55
+Adaugare utilizator,19-05-2023 06:55
+Validare CNP utilizator,19-05-2023 06:55
+Validare nume utilizator,19-05-2023 06:55
+Adaugare utilizator,19-05-2023 06:55
+Validare CNP utilizator,19-05-2023 06:55
+Validare nume utilizator,19-05-2023 06:55
+Adaugare utilizator,19-05-2023 06:55
+Validare CNP utilizator,19-05-2023 06:55
+Validare nume utilizator,19-05-2023 06:55
+Adaugare utilizator,19-05-2023 06:55
+Validare CNP utilizator,19-05-2023 06:55
+Validare nume utilizator,19-05-2023 06:55
+Adaugare utilizator,19-05-2023 06:55
+Validare CNP utilizator,19-05-2023 06:55
+Validare nume utilizator,19-05-2023 06:55
+Adaugare utilizator,19-05-2023 06:55
+Read from CSV file fisiereCSV/muzee.csv,19-05-2023 06:55
+Adaugare muzeu,19-05-2023 06:55
+Adaugare muzeu,19-05-2023 06:55
+Adaugare muzeu,19-05-2023 06:55
+Read from CSV file fisiereCSV/expozitii.csv,19-05-2023 06:55
+Adaugare expozitie,19-05-2023 06:55
+Adaugare expozitie,19-05-2023 06:55
+Adaugare expozitie,19-05-2023 06:55
+Adaugare expozitie,19-05-2023 06:55
+Adaugare expozitie,19-05-2023 06:55
+Adaugare expozitie,19-05-2023 06:55
+Adaugare expozitie,19-05-2023 06:55
+Adaugare expozitie,19-05-2023 06:55
+Adaugare expozitie,19-05-2023 06:55
+Read from CSV file fisiereCSV/exponate.csv,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Adaugare exponat,19-05-2023 06:55
+Get exponat,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie dupa id,19-05-2023 06:55
+Get expozitie,19-05-2023 06:55
+Get muzeu dupa id,19-05-2023 06:55
+Get muzeu dupa id,19-05-2023 06:55
+Get muzeu dupa id,19-05-2023 06:55
+Get muzeu dupa id,19-05-2023 06:55
+Get muzeu dupa id,19-05-2023 06:55
+Get muzeu dupa id,19-05-2023 06:55
+Get muzeu dupa id,19-05-2023 06:55
+Get muzeu dupa id,19-05-2023 06:55
+Get muzeu dupa id,19-05-2023 06:55
+Get utilizator,19-05-2023 06:55
+Write in CSV file fisiereCSV/test.csv,19-05-2023 06:55
+Get exponat,19-05-2023 06:55
+Write in CSV file fisiereCSV/test.csv,19-05-2023 06:55
+Get expozitie,19-05-2023 06:55
+Write in CSV file fisiereCSV/test.csv,19-05-2023 06:55
+Get muzee,19-05-2023 06:55
+Write in CSV file fisiereCSV/test.csv,19-05-2023 06:55

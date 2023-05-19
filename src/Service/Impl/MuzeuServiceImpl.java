@@ -3,6 +3,8 @@ package Service.Impl;
 import Exceptii.InvalidNumarExpozitiiException;
 import Exceptii.NuEsteMuzeulException;
 import Exceptii.NuSuntMuzeeException;
+import Model.Exponat;
+import Model.Expozitie;
 import Model.Muzeu;
 import Service.MuzeuService;
 import Utile.AuditSingleton;
@@ -32,6 +34,21 @@ public class MuzeuServiceImpl implements MuzeuService {
             muzee.add(muzeu);
             AuditSingleton.INSTANCE.writeAction("Adaugare muzeu");
         }
+    }
+
+    @Override
+    public void addMuzeu(String[] muzeu) throws Exception {
+        boolean muzeuValid = true;
+
+        int id = Integer.parseInt(muzeu[0]);
+        String denumire = muzeu[1];
+        String adresa = muzeu[2];
+
+        if (muzee == null)
+            muzee = new ArrayList<>();
+        muzee.add(new Muzeu(id, denumire, adresa));
+        AuditSingleton.INSTANCE.writeAction("Adaugare muzeu");
+
     }
 
     @Override

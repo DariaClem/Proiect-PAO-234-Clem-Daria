@@ -8,10 +8,11 @@ import Model.Expozitie;
 import Service.ExpozitieService;
 import Utile.AuditSingleton;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 import static Validari.ExpozitieValidare.validareExponate;
 import static Validari.MuzeuValidare.validareExpozitii;
@@ -36,6 +37,24 @@ public class ExpozitieServiceImpl implements ExpozitieService {
             expozitii.add(expozitie);
             AuditSingleton.INSTANCE.writeAction("Adaugare expozitie");
         }
+    }
+
+    @Override
+    public void addExpozitie(String[] expozitie) throws Exception {
+        boolean expozitieValida = true;
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+        int id = Integer.parseInt(expozitie[0]);
+        String denumire = expozitie[1];
+        Date dataInceput = dateFormat.parse(expozitie[2]);
+        Date dataFinal = dateFormat.parse(expozitie[3]);
+        int idMuzeu = Integer.parseInt(expozitie[4]);
+
+        if (expozitii == null)
+            expozitii = new HashSet<>();
+        expozitii.add(new Expozitie(id, denumire, dataInceput, dataFinal, idMuzeu));
+        AuditSingleton.INSTANCE.writeAction("Adaugare expozitie");
+
     }
 
     @Override

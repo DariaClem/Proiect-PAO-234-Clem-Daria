@@ -1,11 +1,8 @@
 package Service.Impl;
 
 import Exceptii.NuEsteExponatulException;
-import Exceptii.NuEsteUtilizatorulException;
 import Exceptii.NuSuntExponateException;
-import Exceptii.NuSuntUtilizatoriException;
 import Model.Exponat;
-import Model.Utilizator;
 import Service.ExponateService;
 import Utile.AuditSingleton;
 
@@ -20,6 +17,23 @@ public class ExponateServiceImpl implements ExponateService {
         if (exponate == null)
             exponate = new ArrayList<>();
         exponate.add(exponat);
+        AuditSingleton.INSTANCE.writeAction("Adaugare exponat");
+    }
+
+    @Override
+    public void addExponat(String[] exponat) throws Exception {
+
+        int id = Integer.parseInt(exponat[0]);
+        String denumire = exponat[1];
+        String descriere = exponat[2];
+        String taraOrigine = exponat[3];
+        String dataOrigine = exponat[4];
+        int idExpozitie = Integer.parseInt(exponat[5]);
+
+        if (exponate == null)
+            exponate = new ArrayList<>();
+
+        exponate.add(new Exponat(id, denumire, descriere, taraOrigine, dataOrigine, idExpozitie));
         AuditSingleton.INSTANCE.writeAction("Adaugare exponat");
     }
 

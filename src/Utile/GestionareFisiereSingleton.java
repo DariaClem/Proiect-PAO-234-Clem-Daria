@@ -28,13 +28,22 @@ public enum GestionareFisiereSingleton {
     }
 
     public void writeInCsv(String fileName, List<String[]> content) {
-        try (PrintWriter printWriter = new PrintWriter(fileName)) {
+        try (PrintWriter printWriter = new PrintWriter(new FileWriter(fileName, true))) {
             content.stream()
                     .map(this::convertToCsv)
                     .sorted()
                     .forEach(printWriter::println);
             AuditSingleton.INSTANCE.writeAction("Write in CSV file " + fileName);
-        } catch (FileNotFoundException exception) {
+        } catch (IOException exception) {
+            System.out.println(exception.getMessage());
+        }
+    }
+
+    public void writeInCsv(String fileName, String content) {
+        try (PrintWriter printWriter = new PrintWriter(new FileWriter(fileName, true))) {
+            printWriter.println(content);
+            AuditSingleton.INSTANCE.writeAction("Write in CSV file " + fileName);
+        } catch (IOException exception) {
             System.out.println(exception.getMessage());
         }
     }

@@ -8,16 +8,26 @@ public class Exponat {
     private String descriere;
     private String taraOrigine;
     private String dataOrigine;
+    private int idExpozitie;
 
     public Exponat() {
     }
 
-    public Exponat(int id, String denumire, String descriere, String taraOrigine, String dataOrigine) {
+    public Exponat(int id, String denumire, String descriere, String taraOrigine, String dataOrigine, int idExpozitie) {
         this.id = id;
         this.denumire = denumire;
         this.descriere = descriere;
         this.taraOrigine = taraOrigine;
         this.dataOrigine = dataOrigine;
+        this.idExpozitie = idExpozitie;
+    }
+
+    public int getIdExpozitie() {
+        return idExpozitie;
+    }
+
+    public void setIdExpozitie(int idExpozitie) {
+        this.idExpozitie = idExpozitie;
     }
 
     public int getId() {
@@ -68,6 +78,7 @@ public class Exponat {
                 ", descriere='" + descriere + '\'' +
                 ", taraOrigine='" + taraOrigine + '\'' +
                 ", dataOrigine='" + dataOrigine + '\'' +
+                ", idExpozitie=" + idExpozitie +
                 '}';
     }
 }
