@@ -1,72 +1,70 @@
 import Model.*;
 import Service.Impl.*;
-import Utile.GestionareFisiereSingleton;
-import Utile.InstitutiiEmitere;
-import Utile.TipTransport;
+import Utils.FileManagementSingleton;
 
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        // Initializarea serviciului singleton care se ocupa de citirea si afisarea din si in fisiere
-        GestionareFisiereSingleton singleton = GestionareFisiereSingleton.INSTANCE;
+        // Inițializarea serviciului singleton care se ocupă de citirea și afișarea din și în fișiere
+        FileManagementSingleton singleton = FileManagementSingleton.INSTANCE;
 
-        // Denumirile fisierelor csv
-        String utilizatorFile = "fisiereCSV/utilizatori.csv";
-        String muzeuFile = "fisiereCSV/muzee.csv";
-        String expozitiiFile = "fisiereCSV/expozitii.csv";
-        String exponateFile = "fisiereCSV/exponate.csv";
-        String outputFile = "fisiereCSV/test.csv";
+        // Denumirile fișierelor csv
+        String userFile = "CSVFiles/users.csv";
+        String museumFile = "CSVFiles/museums.csv";
+        String exhibitionsFile = "CSVFiles/exhibitions.csv";
+        String exhibitsFile = "CSVFiles/exhibits.csv";
+        String outputFile = "CSVFiles/test.csv";
 
-        // Citirea informatiilor despre utilizator
-        List<String[]> content = singleton.readFromCsv(utilizatorFile);
+        // Citirea informațiilor despre utilizator
+        List<String[]> content = singleton.readFromCsv(userFile);
 
-        // Initializarea serviciului pentru prelucrarea utilizatorilor
-        UtilizatorServiceImpl utilizatorServiceImpl = new UtilizatorServiceImpl();
-        for (String[] utilizator : content)
-            utilizatorServiceImpl.addUtilizator(utilizator);
+        // Inițializarea serviciului pentru prelucrarea utilizatorilor
+        UserServiceImpl userServiceImpl = new UserServiceImpl();
+        for (String[] user : content)
+            userServiceImpl.addUser(user);
 
-        // Citirea informatiilor despre muzee
-        content = singleton.readFromCsv(muzeuFile);
+        // Citirea informațiilor despre muzee
+        content = singleton.readFromCsv(museumFile);
 
-        // Initializarea serviciului pentru prelucrarea muzeelor
-        MuzeuServiceImpl muzeuServiceImpl = new MuzeuServiceImpl();
-        for (String[] muzeu : content)
-            muzeuServiceImpl.addMuzeu(muzeu);
+        // Inițializarea serviciului pentru prelucrarea muzeelor
+        MuseumServiceImpl museumServiceImpl = new MuseumServiceImpl();
+        for (String[] museum : content)
+            museumServiceImpl.addMuseum(museum);
 
-        // Citirea informatiilor despre expozitii
-        content = singleton.readFromCsv(expozitiiFile);
+        // Citirea informațiilor despre expoziții
+        content = singleton.readFromCsv(exhibitionsFile);
 
-        // Initializarea serviciului pentru prelucrarea expozitiilor
-        ExpozitieServiceImpl expozitieServiceImpl = new ExpozitieServiceImpl();
-        for (String[] expozitie : content)
-            expozitieServiceImpl.addExpozitie(expozitie);
+        // Inițializarea serviciului pentru prelucrarea expozițiilor
+        ExhibitionServiceImpl exhibitionServiceImpl = new ExhibitionServiceImpl();
+        for (String[] exhibition : content)
+            exhibitionServiceImpl.addExhibition(exhibition);
 
-        // Citirea informatiilor despre exponate
-        content = singleton.readFromCsv(exponateFile);
+        // Citirea informațiilor despre exponate
+        content = singleton.readFromCsv(exhibitsFile);
 
-        // Initializarea serviciului pentru prelucrarea exponatelor
-        ExponateServiceImpl exponateServiceImpl = new ExponateServiceImpl();
-        for (String[] exponat : content) {
-            exponateServiceImpl.addExponat(exponat);
+        // Inițializarea serviciului pentru prelucrarea exponatelor
+        ExhibitsServiceImpl exhibitsServiceImpl = new ExhibitsServiceImpl();
+        for (String[] exhibit : content) {
+            exhibitsServiceImpl.addExhibit(exhibit);
         }
 
-        // Adaugarea exponatelor in lista de exponate corespunzatoare fiecarei expozitii
-        for (Exponat exponat : exponateServiceImpl.getExponate()) {
-            Expozitie expozitie = expozitieServiceImpl.getExpozitie(exponat.getIdExpozitie());
-            expozitie.addExponat(exponat);
+        // Adăugarea exponatelor în lista de exponate corespunzătoare fiecărei expoziții
+        for (Exhibit exhibit : exhibitsServiceImpl.getExhibits()) {
+            Exhibition exhibition = exhibitionServiceImpl.getExhibition(exhibit.getExhibitionId());
+            exhibition.addExhibit(exhibit);
         }
 
-        // Adaugarea expozitiilor in lista de expozitii corespunzatoare fiecarui muzeu
-        for (Expozitie expozitie : expozitieServiceImpl.getExpozitii()) {
-            Muzeu muzeu = muzeuServiceImpl.getMuzeu(expozitie.getIdMuzeu());
-            muzeu.addExpozitie(expozitie);
+        // Adăugarea expozițiilor în lista de expoziții corespunzătoare fiecărui muzeu
+        for (Exhibition exhibition : exhibitionServiceImpl.getExhibitions()) {
+            Museum museum = museumServiceImpl.getMuseum(exhibition.getMuseumId());
+            museum.addExhibition(exhibition);
         }
 
-        // Scrierea in fisier a informatiilor prelucrate anterior
-        singleton.writeInCsv(outputFile, utilizatorServiceImpl.getUtilizatori().toString());
-        singleton.writeInCsv(outputFile, exponateServiceImpl.getExponate().toString());
-        singleton.writeInCsv(outputFile, expozitieServiceImpl.getExpozitii().toString());
-        singleton.writeInCsv(outputFile, muzeuServiceImpl.getMuzee().toString());
+        // Scrierea in fișiere a informațiilor prelucrate anterior
+        singleton.writeInCsv(outputFile, userServiceImpl.getUsers().toString());
+        singleton.writeInCsv(outputFile, exhibitsServiceImpl.getExhibits().toString());
+        singleton.writeInCsv(outputFile, exhibitionServiceImpl.getExhibitions().toString());
+        singleton.writeInCsv(outputFile, museumServiceImpl.getMuseums().toString());
     }
 }
