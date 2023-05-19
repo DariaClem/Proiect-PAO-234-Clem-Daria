@@ -11,11 +11,11 @@ public enum GestionareFisiereSingleton {
         List<String[]> lines = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
             String line;
-            String[] tempArr;
+            String[] words;
             AuditSingleton.INSTANCE.writeAction("Read from CSV file " + fileName);
             while ((line = bufferedReader.readLine()) != null) {
-                tempArr = line.split(",");
-                lines.add(tempArr);
+                words = line.split(",");
+                lines.add(words);
             }
         } catch (IOException exception) {
             System.out.println(exception.getMessage());
