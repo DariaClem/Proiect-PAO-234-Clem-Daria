@@ -1,3 +1,4 @@
+import Configuration.DatabaseConfiguration;
 import Model.*;
 import Service.Impl.*;
 import Utils.FileManagementSingleton;
@@ -5,6 +6,7 @@ import Utils.FileManagementSingleton;
 import java.util.*;
 
 public class Main {
+    /*
     public static void main(String[] args) throws Exception {
         // Inițializarea serviciului singleton care se ocupă de citirea și afișarea din și în fișiere
         FileManagementSingleton singleton = FileManagementSingleton.INSTANCE;
@@ -66,5 +68,10 @@ public class Main {
         singleton.writeInCsv(outputFile, exhibitsServiceImpl.getExhibits().toString());
         singleton.writeInCsv(outputFile, exhibitionServiceImpl.getExhibitions().toString());
         singleton.writeInCsv(outputFile, museumServiceImpl.getMuseums().toString());
+    }
+     */
+    public static void main(String[] args) throws Exception {
+        DatabaseConfiguration databaseConfiguration = DatabaseConfiguration.INSTANCE;
+
     }
 }
