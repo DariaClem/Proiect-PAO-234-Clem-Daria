@@ -149,5 +149,11 @@ public class Main {
         System.out.println(exhibitionServiceDB.getAllExhibitions());
         System.out.println(exhibitServiceDB.getAllExhibits());
         System.out.println();
+
+        museumRepository.deleteAllMuseums();
+        System.out.println(museumServiceDB.getAllMuseums());
+        System.out.println(exhibitionServiceDB.getAllExhibitions());
+        System.out.println(exhibitServiceDB.getAllExhibits());
+        System.out.println();
     }
 }
