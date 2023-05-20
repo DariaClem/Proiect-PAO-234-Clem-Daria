@@ -1,7 +1,7 @@
 package Exceptions;
 
 public class InvalidCNPException extends RuntimeException {
-    public InvalidCNPException(String mesaj) {
-        super(mesaj);
+    public InvalidCNPException(String message) {
+        super(message);
     }
 }

@@ -2,7 +2,6 @@ package Configuration;
 
 import Utils.FileManagementSingleton;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

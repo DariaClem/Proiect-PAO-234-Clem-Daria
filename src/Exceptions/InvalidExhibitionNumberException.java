@@ -1,7 +1,7 @@
 package Exceptions;
 
 public class InvalidExhibitionNumberException extends RuntimeException {
-    public InvalidExhibitionNumberException(String mesaj) {
-        super(mesaj);
+    public InvalidExhibitionNumberException(String message) {
+        super(message);
     }
 }

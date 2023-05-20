@@ -1,7 +1,7 @@
 package Exceptions;
 
 public class MeansOfTransportNotFoundException extends RuntimeException {
-    public MeansOfTransportNotFoundException(String mesaj) {
-        super(mesaj);
+    public MeansOfTransportNotFoundException(String message) {
+        super(message);
     }
 }

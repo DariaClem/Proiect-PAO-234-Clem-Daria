@@ -4,7 +4,7 @@ import Model.Exhibit;
 
 import java.util.List;
 
-public interface ExhibitsService {
+public interface ExhibitService {
     void addExhibit(Exhibit exhibit) throws Exception;
     void addExhibit(String[] exhibit) throws Exception;
     List<Exhibit> getExhibits() throws Exception;

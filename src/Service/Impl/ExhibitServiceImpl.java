@@ -3,13 +3,13 @@ package Service.Impl;
 import Exceptions.ExhibitNotFoundException;
 import Exceptions.ExhibitsNotFoundException;
 import Model.Exhibit;
-import Service.ExhibitsService;
+import Service.ExhibitService;
 import Utils.AuditSingleton;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExhibitsServiceImpl implements ExhibitsService {
+public class ExhibitServiceImpl implements ExhibitService {
     List<Exhibit> exhibits;
 
     @Override

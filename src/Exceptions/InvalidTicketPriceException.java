@@ -1,7 +1,7 @@
 package Exceptions;
 
 public class InvalidTicketPriceException extends RuntimeException {
-    public InvalidTicketPriceException(String mesaj) {
-        super(mesaj);
+    public InvalidTicketPriceException(String message) {
+        super(message);
     }
 }
