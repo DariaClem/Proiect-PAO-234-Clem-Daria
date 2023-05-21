@@ -39,6 +39,11 @@ public Exhibition getExhibition(int id)
 ```Java
 public List<Exhibition> getExhibition(String name)
 ```
+- funcție de extragere a unei înregistrări pe baza cheii străine (pentru clasele Exhibition și Exhibit)
+```Java
+public List<Exhibition> getExhibitionByMuseumId(int id) // pentru clasa Exhibition
+public List<Exhibition> getExhibitionByExhibitionId(int id) // pentru clasa Exhibit
+```
 - funcție de editare a unei înregistrări, având ca parametrii string-uri cu numele proprietății ce se dorește a fi editată, noua valoare, criteriul de selectare a înregistrării și valoarea criteriului
 ```Java
 public void editExhibition(String property, String newValue, String criterion, String value)
@@ -67,6 +72,7 @@ exhibitServiceDB.addExhibit("Fosilă", "Fosilă descoperită pe fundul Mării Ne
 System.out.println(exhibitServiceDB.getAllExhibits());
 System.out.println(exhibitServiceDB.getExhibit(50));
 System.out.println(exhibitServiceDB.getExhibit("Statuia lui Venus"));
+System.out.println(exhibitServiceDB.getExhibitByExhibitionId(31));
 exhibitServiceDB.editExhibit("description", "Fosilă neidentificată", "name", "Fosilă");
 exhibitRepository.deleteAllExhibits();
 exhibitServiceDB.deleteExhibit(57);
