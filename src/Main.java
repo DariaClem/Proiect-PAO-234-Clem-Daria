@@ -113,6 +113,8 @@ public class Main {
         System.out.println(exhibitServiceDB.getExhibit("Statuia lui Venus"));
         System.out.println();
 
+        System.out.println(exhibitServiceDB.getExhibitByExhibitionId(31));
+
         /*userServiceDB.addUser("Anghel", "Luminița", "9876543210000", "București");
         museumServiceDB.addMuseum("Muzeul apei", "Fălticeni");
 
@@ -131,7 +133,7 @@ public class Main {
 
         String dateString1 = "2022-02-12 19:30:00";
 
-        exhibitionServiceDB.editExhibition("startDate", dateString1, "id", "43");
+        //exhibitionServiceDB.editExhibition("startDate", dateString1, "id", "43");
         /*exhibitionServiceDB.editExhibition("name", "Marea Neagră", "startDate", date1.toString());
         exhibitServiceDB.editExhibit("description", "Fosilă neidentificată", "name", "Fosilă");
 

@@ -15,6 +15,7 @@ public interface ExhibitionServiceDB {
     public Exhibition getExhibition(int id);
 
     public List<Exhibition> getExhibition(String name);
+    public List<Exhibition> getExhibitionByMuseumId(int id);
 
     public void editExhibition(String property, String newValue, String criterion, String value);
 

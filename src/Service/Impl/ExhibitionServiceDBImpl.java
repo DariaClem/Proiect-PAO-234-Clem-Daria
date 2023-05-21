@@ -83,6 +83,19 @@ public class ExhibitionServiceDBImpl implements ExhibitionServiceDB {
     }
 
     @Override
+    public List<Exhibition> getExhibitionByMuseumId(int id) {
+        try {
+            List<Exhibition> exhibitions = exhibitionRepository.getExhibitionByMuseumId(id);
+            if (exhibitions == null)
+                throw new ExhibitionsNotFoundException("There are no exhibitions with the given museumId.");
+            return exhibitions;
+        } catch (SQLException | ExhibitionsNotFoundException exception) {
+            System.out.println(exception.getMessage());
+        }
+        return null;
+    }
+
+    @Override
     public void editExhibition(String property, String newValue, String criterion, String value) {
         try {
             exhibitionRepository.editExhibition(property, newValue, criterion, value);

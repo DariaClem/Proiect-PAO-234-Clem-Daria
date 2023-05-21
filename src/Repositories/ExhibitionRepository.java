@@ -81,6 +81,14 @@ public class ExhibitionRepository {
         return extractData(resultSet);
     }
 
+    public List<Exhibition> getExhibitionByMuseumId(int id) throws SQLException {
+        PreparedStatement preparedStatement = databaseConfiguration.getConnection().prepareStatement(ExhibitionsConstants.QUERY_GET_EXHIBITION_BY_MUSEUMID);
+        preparedStatement.setInt(1, id);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        return extractData(resultSet);
+    }
+
     public void editExhibition(String property, String newValue, String criterion, String value) throws Exception {
         String queryUpdatePropertyByCriterion = "update smartcity.exhibition set " + property + " = ";
         if (property.equals("id") || property.equals("museumId")) {

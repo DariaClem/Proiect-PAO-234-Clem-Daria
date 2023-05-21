@@ -84,6 +84,14 @@ public class ExhibitRepository {
         return extractData(resultSet);
     }
 
+    public List<Exhibit> getExhibitByExhibitionId(int id) throws SQLException {
+        PreparedStatement preparedStatement = databaseConfiguration.getConnection().prepareStatement(ExhibitsConstants.QUERY_GET_EXHIBIT_BY_EXHIBITIONID);
+        preparedStatement.setInt(1, id);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        return extractData(resultSet);
+    }
+
     public void editExhibit(String property, String newValue, String criterion, String value) throws SQLException {
         String queryUpdatePropertyByCriterion = "update smartcity.exhibit set " + property + " = ";
 

@@ -81,6 +81,19 @@ public class ExhibitServiceDBImpl implements ExhibitServiceDB {
     }
 
     @Override
+    public List<Exhibit> getExhibitByExhibitionId(int id) {
+        try {
+            List<Exhibit> exhibits = exhibitRepository.getExhibitByExhibitionId(id);
+            if (exhibits == null)
+                throw new ExhibitsNotFoundException("There are no exhibits with the given exhibitionId.");
+            return exhibits;
+        } catch (SQLException | ExhibitsNotFoundException exception) {
+            System.out.println(exception.getMessage());
+        }
+        return null;
+    }
+
+    @Override
     public void editExhibit(String property, String newValue, String criterion, String value) {
         try {
             exhibitRepository.editExhibit(property, newValue, criterion, value);
