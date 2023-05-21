@@ -5,6 +5,13 @@
 Proiectul Smart City are ca scop crearea unei platforme care să ofere posibilitatea cetățenilor de a achiziționa bilete la muzeu sau pentru mijloacele de transport. 
 În același timp, utilizatorii pot vedea detalii despre muzee cu expozițiile și exponatele acestora.
 
+### Cuprins
+- [Persistența datelor folosind JDBC](#persistența-datelor-folosind-jdbc)
+  - [Constants](#constants)
+  - [Repositories](#repositories)
+  - [Service](#service)
+- [Flux de testare](#flux-de-testare)
+
 ### Persistența datelor folosind JDBC
 
 În partea a 3-a a proiectului am înlocuit serviciile realizate în etapa a 2-a cu servicii care să asigure persistența datelor folosind JDBC. Serviciile oferă operații de tip CRUD (create, read, update, delete) pentru clasele User, Museum, Exhibition, Exhibit. 
