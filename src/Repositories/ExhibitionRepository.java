@@ -5,6 +5,8 @@ import Constants.ExhibitionsConstants;
 import Model.Exhibition;
 
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,15 +81,14 @@ public class ExhibitionRepository {
         return extractData(resultSet);
     }
 
-    public void editExhibition(String property, String newValue, String criterion, String value) throws SQLException {
+    public void editExhibition(String property, String newValue, String criterion, String value) throws Exception {
         String queryUpdatePropertyByCriterion = "update smartcity.exhibition set " + property + " = ";
-
-        if (property.equals("id")) {
-            queryUpdatePropertyByCriterion += Integer.parseInt(newValue) + "where " + criterion + " = ";
+        if (property.equals("id") || property.equals("museumId")) {
+            queryUpdatePropertyByCriterion += Integer.parseInt(newValue) + " where " + criterion + " = ";
         } else {
             queryUpdatePropertyByCriterion += "'" + newValue + "' where " + criterion + " = ";
         }
-        if (criterion.equals("id")) {
+        if (criterion.equals("id") || criterion.equals("museumId")) {
             queryUpdatePropertyByCriterion += Integer.parseInt(value);
         } else {
             queryUpdatePropertyByCriterion += "'" + value + "'";

@@ -86,7 +86,7 @@ public class ExhibitionServiceDBImpl implements ExhibitionServiceDB {
     public void editExhibition(String property, String newValue, String criterion, String value) {
         try {
             exhibitionRepository.editExhibition(property, newValue, criterion, value);
-        } catch (SQLException exception) {
+        } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }
     }

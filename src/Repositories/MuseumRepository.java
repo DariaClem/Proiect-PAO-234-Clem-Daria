@@ -79,7 +79,7 @@ public class MuseumRepository {
         String queryUpdatePropertyByCriterion = "update smartcity.museum set " + property + " = ";
 
         if (property.equals("id")) {
-            queryUpdatePropertyByCriterion += Integer.parseInt(newValue) + "where " + criterion + " = ";
+            queryUpdatePropertyByCriterion += Integer.parseInt(newValue) + " where " + criterion + " = ";
         } else {
             queryUpdatePropertyByCriterion += "'" + newValue + "' where " + criterion + " = ";
         }

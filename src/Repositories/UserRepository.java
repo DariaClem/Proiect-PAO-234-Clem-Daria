@@ -89,7 +89,7 @@ public class UserRepository {
     public void editUser(String property, String newValue, String criterion, String value) throws SQLException {
         String queryUpdatePropertyByCriterion = "update smartcity.user set " + property + " = ";
         if (property.equals("id")) {
-            queryUpdatePropertyByCriterion += Integer.parseInt(newValue) + "where " + criterion + " = ";
+            queryUpdatePropertyByCriterion += Integer.parseInt(newValue) + " where " + criterion + " = ";
         } else {
             queryUpdatePropertyByCriterion += "'" + newValue + "' where " + criterion + " = ";
         }

@@ -5,11 +5,11 @@ import Repositories.ExhibitionRepository;
 import Repositories.MuseumRepository;
 import Repositories.UserRepository;
 import Service.Impl.*;
-import Utils.FileManagementSingleton;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Main {
     /*
@@ -113,24 +113,26 @@ public class Main {
         System.out.println(exhibitServiceDB.getExhibit("Statuia lui Venus"));
         System.out.println();
 
-        userServiceDB.addUser("Anghel", "Luminița", "9876543210000", "București");
+        /*userServiceDB.addUser("Anghel", "Luminița", "9876543210000", "București");
         museumServiceDB.addMuseum("Muzeul apei", "Fălticeni");
 
         String dateString1 = "2022-02-10 15:30:00";
         String dateString2 = "2025-06-16 18:30:00";
 
-        String pattern = "yyyy-MM-dd HH:mm:ss";
-        SimpleDateFormat formatter = new SimpleDateFormat(pattern);
-
-        Date date1 = new Date(formatter.parse(dateString1).getTime());
-        Date date2 = new Date(formatter.parse(dateString2).getTime());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime dateTime1 = LocalDateTime.parse(dateString1, formatter);
+        LocalDateTime dateTime2 = LocalDateTime.parse(dateString2, formatter);
 
         exhibitionServiceDB.addExhibition("Adâncurile Mării Negre", date1, date2, 7);
         exhibitServiceDB.addExhibit("Fosilă", "Fosilă descoperită pe fundul Mării Negre", "România", "12000 de ani î.Hr.", 37);
 
-        userServiceDB.editUser("firstName", "Stefana", "lastName", "Clem");
-        museumServiceDB.editMuseum("address", "Suceava", "name", "Muzeul apei");
-        exhibitionServiceDB.editExhibition("name", "Marea Neagră", "startDate", date1.toString());
+        userServiceDB.editUser("id", "26", "id", "28");
+        */
+
+        String dateString1 = "2022-02-12 19:30:00";
+
+        exhibitionServiceDB.editExhibition("startDate", dateString1, "id", "43");
+        /*exhibitionServiceDB.editExhibition("name", "Marea Neagră", "startDate", date1.toString());
         exhibitServiceDB.editExhibit("description", "Fosilă neidentificată", "name", "Fosilă");
 
         System.out.println(userServiceDB.getAllUsers());
@@ -154,6 +156,6 @@ public class Main {
         System.out.println(museumServiceDB.getAllMuseums());
         System.out.println(exhibitionServiceDB.getAllExhibitions());
         System.out.println(exhibitServiceDB.getAllExhibits());
-        System.out.println();
+        System.out.println();*/
     }
 }

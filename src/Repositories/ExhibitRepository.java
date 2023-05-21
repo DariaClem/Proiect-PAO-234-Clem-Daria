@@ -87,12 +87,12 @@ public class ExhibitRepository {
     public void editExhibit(String property, String newValue, String criterion, String value) throws SQLException {
         String queryUpdatePropertyByCriterion = "update smartcity.exhibit set " + property + " = ";
 
-        if (property.equals("id")) {
-            queryUpdatePropertyByCriterion += Integer.parseInt(newValue) + "where " + criterion + " = ";
+        if (property.equals("id") || property.equals("exhibitionId")) {
+            queryUpdatePropertyByCriterion += Integer.parseInt(newValue) + " where " + criterion + " = ";
         } else {
             queryUpdatePropertyByCriterion += "'" + newValue + "' where " + criterion + " = ";
         }
-        if (criterion.equals("id")) {
+        if (criterion.equals("id") || criterion.equals("exhibitionId")) {
             queryUpdatePropertyByCriterion += Integer.parseInt(value);
         } else {
             queryUpdatePropertyByCriterion += "'" + value + "'";
