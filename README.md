@@ -5,6 +5,11 @@
 Proiectul Smart City are ca scop crearea unei platforme care să ofere posibilitatea cetățenilor de a achiziționa bilete la muzeu sau pentru mijloacele de transport. 
 În același timp, utilizatorii pot vedea detalii despre muzee cu expozițiile și exponatele acestora.
 
+## Cuprins
+- [Fișiere CSV](#1-fișiere-csv)
+- [Serviciu audit](#2-serviciu-audit)
+- [Alte îmbunătățiri](#alte-îmbunătățiri)
+
 ## 1. Fișiere CSV
 
 În partea a doua a proiectului am asigurat persistența datelor utilizând fișiere CSV pentru 4 clase și anume clasele User, Museum, Exhibition, Exhibit. Am scris date specifice pentru crearea obiectelor în fișierele users.csv, museums.csv, exhibitions.csv și exhibits.csv din folderul CSVFiles. Ulterior, după prelucrarea datelor am afișat în fișierul test.csv obiectele create.
