@@ -110,7 +110,7 @@ public class ExhibitionRepository {
     }
 
     public void deleteExhibition(String name) throws SQLException {
-        PreparedStatement preparedStatement = databaseConfiguration.getConnection().prepareStatement(ExhibitionsConstants.QUERY_DELETE_EXHIBITION_BY_ID);
+        PreparedStatement preparedStatement = databaseConfiguration.getConnection().prepareStatement(ExhibitionsConstants.QUERY_DELETE_EXHIBITION_BY_NAME);
         preparedStatement.setString(1, name);
         preparedStatement.executeUpdate();
     }

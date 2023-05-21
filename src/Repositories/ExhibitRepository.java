@@ -114,7 +114,7 @@ public class ExhibitRepository {
     }
 
     public void deleteExhibit(String name) throws SQLException {
-        PreparedStatement preparedStatement = databaseConfiguration.getConnection().prepareStatement(ExhibitsConstants.QUERY_DELETE_EXHIBIT_BY_ID);
+        PreparedStatement preparedStatement = databaseConfiguration.getConnection().prepareStatement(ExhibitsConstants.QUERY_DELETE_EXHIBIT_BY_NAME);
         preparedStatement.setString(1, name);
         preparedStatement.executeUpdate();
     }

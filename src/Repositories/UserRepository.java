@@ -114,7 +114,7 @@ public class UserRepository {
     }
 
     public void deleteUser(String lastName, String firstName) throws SQLException {
-        PreparedStatement preparedStatement = databaseConfiguration.getConnection().prepareStatement(UsersConstants.QUERY_DELETE_USER_BY_ID);
+        PreparedStatement preparedStatement = databaseConfiguration.getConnection().prepareStatement(UsersConstants.QUERY_DELETE_USER_BY_NAME);
         preparedStatement.setString(1, lastName);
         preparedStatement.setString(2, firstName);
         preparedStatement.executeUpdate();

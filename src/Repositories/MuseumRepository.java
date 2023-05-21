@@ -105,7 +105,7 @@ public class MuseumRepository {
     }
 
     public void deleteMuseum(String name) throws SQLException {
-        PreparedStatement preparedStatement = databaseConfiguration.getConnection().prepareStatement(MuseumsConstants.QUERY_DELETE_MUSEUM_BY_ID);
+        PreparedStatement preparedStatement = databaseConfiguration.getConnection().prepareStatement(MuseumsConstants.QUERY_DELETE_MUSEUM_BY_NAME);
         preparedStatement.setString(1, name);
         preparedStatement.executeUpdate();
     }
