@@ -5,6 +5,13 @@
 Proiectul Smart City are ca scop crearea unei platforme care să ofere posibilitatea cetățenilor de a achiziționa bilete la muzeu sau pentru mijloacele de transport. 
 În același timp, utilizatorii pot vedea detalii despre muzee cu expozițiile și exponatele acestora.
 
+## Cuprins
+- [Clase](#clase)
+- [Enum-uri](#enum-uri)
+- [Excepții](#excepții)
+- [Funcții](#funcții)
+- [Fluxul de testare](#fluxul-de-testare)
+
 ## Clase
 
 Pentru a implementa acest proiect, am definit mai multe clase:
