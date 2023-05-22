@@ -1,5 +1,5 @@
 import Configuration.DatabaseConfiguration;
-import Model.*;
+
 import Repositories.ExhibitRepository;
 import Repositories.ExhibitionRepository;
 import Repositories.MuseumRepository;
@@ -8,8 +8,6 @@ import Service.Impl.*;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Main {
     /*
@@ -95,10 +93,10 @@ public class Main {
         System.out.println(exhibitServiceDB.getAllExhibits());
         System.out.println();
 
-        System.out.println(userServiceDB.getUser(10));
-        System.out.println(museumServiceDB.getMuseum(4));
-        System.out.println(exhibitionServiceDB.getExhibition(28));
-        System.out.println(exhibitServiceDB.getExhibit(50));
+        System.out.println(userServiceDB.getUser(1));
+        System.out.println(museumServiceDB.getMuseum(2));
+        System.out.println(exhibitionServiceDB.getExhibition(3));
+        System.out.println(exhibitServiceDB.getExhibit(4));
         System.out.println();
 
         System.out.println(userServiceDB.getUser(209));
@@ -108,33 +106,36 @@ public class Main {
         System.out.println();
 
         System.out.println(userServiceDB.getUser("Clem", "Daria"));
-        System.out.println(museumServiceDB.getMuseum("Muzeul National de Arta al Romaniei"));
+        System.out.println(museumServiceDB.getMuseum("Muzeul Național de Artă al României"));
         System.out.println(exhibitionServiceDB.getExhibition("Expoziția 'Epoca medievală și arta cavalerilor'"));
         System.out.println(exhibitServiceDB.getExhibit("Statuia lui Venus"));
         System.out.println();
 
-        System.out.println(exhibitServiceDB.getExhibitByExhibitionId(31));
+        System.out.println(exhibitServiceDB.getExhibitByExhibitionId(6));
+        System.out.println(exhibitionServiceDB.getExhibitionByMuseumId(2));
 
-        /*userServiceDB.addUser("Anghel", "Luminița", "9876543210000", "București");
+        userServiceDB.addUser("Anghel", "Luminița", "9876543210000", "București");
         museumServiceDB.addMuseum("Muzeul apei", "Fălticeni");
 
-        String dateString1 = "2022-02-10 15:30:00";
-        String dateString2 = "2025-06-16 18:30:00";
+        String dateString1 = "2022-02-10";
+        String dateString2 = "2025-06-16";
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime dateTime1 = LocalDateTime.parse(dateString1, formatter);
-        LocalDateTime dateTime2 = LocalDateTime.parse(dateString2, formatter);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date utilDate1 = formatter.parse(dateString1);
+        java.util.Date utilDate2 = formatter.parse(dateString2);
 
-        exhibitionServiceDB.addExhibition("Adâncurile Mării Negre", date1, date2, 7);
-        exhibitServiceDB.addExhibit("Fosilă", "Fosilă descoperită pe fundul Mării Negre", "România", "12000 de ani î.Hr.", 37);
+        java.sql.Date sqlDate1 = new java.sql.Date(utilDate1.getTime());
+        java.sql.Date sqlDate2 = new java.sql.Date(utilDate2.getTime());
 
-        userServiceDB.editUser("id", "26", "id", "28");
-        */
+        exhibitionServiceDB.addExhibition("Adâncurile Mării Negre", sqlDate1, sqlDate2, 4);
+        exhibitServiceDB.addExhibit("Fosilă", "Fosilă descoperită pe fundul Mării Negre", "România", "12000 de ani î.Hr.", 10);
 
-        String dateString1 = "2022-02-12 19:30:00";
+        userServiceDB.editUser("id", "11", "id", "10");
 
-        //exhibitionServiceDB.editExhibition("startDate", dateString1, "id", "43");
-        /*exhibitionServiceDB.editExhibition("name", "Marea Neagră", "startDate", date1.toString());
+        dateString1 = "2022-02-12";
+
+        exhibitionServiceDB.editExhibition("startDate", dateString1, "id", "10");
+        exhibitionServiceDB.editExhibition("name", "Marea Neagră", "startDate", dateString1);
         exhibitServiceDB.editExhibit("description", "Fosilă neidentificată", "name", "Fosilă");
 
         System.out.println(userServiceDB.getAllUsers());
@@ -143,10 +144,10 @@ public class Main {
         System.out.println(exhibitServiceDB.getAllExhibits());
         System.out.println();
 
-        userServiceDB.deleteUser(20);
-        museumServiceDB.deleteMuseum(8);
-        exhibitionServiceDB.deleteExhibition(37);
-        exhibitServiceDB.deleteExhibit(57);
+        userServiceDB.deleteUser(11);
+        museumServiceDB.deleteMuseum(4);
+        exhibitionServiceDB.deleteExhibition(10);
+        exhibitServiceDB.deleteExhibit(28);
 
         System.out.println(userServiceDB.getAllUsers());
         System.out.println(museumServiceDB.getAllMuseums());
@@ -158,6 +159,6 @@ public class Main {
         System.out.println(museumServiceDB.getAllMuseums());
         System.out.println(exhibitionServiceDB.getAllExhibitions());
         System.out.println(exhibitServiceDB.getAllExhibits());
-        System.out.println();*/
+        System.out.println();
     }
 }
