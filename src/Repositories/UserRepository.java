@@ -41,6 +41,7 @@ public class UserRepository {
 
     public int addUser(User user) throws SQLException {
         PreparedStatement preparedStatement = databaseConfiguration.getConnection().prepareStatement(UsersConstants.QUERY_CREATE_USER);
+
         preparedStatement.setInt(1, user.getId());
         preparedStatement.setString(2, user.getLastName());
         preparedStatement.setString(3, user.getFirstName());

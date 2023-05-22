@@ -1,5 +1,7 @@
 package Service.Impl;
 
+import Exceptions.InvalidCNPException;
+import Exceptions.InvalidNameException;
 import Exceptions.UserNotFoundException;
 import Exceptions.UsersNotFoundException;
 import Model.User;
@@ -8,6 +10,9 @@ import Service.UserServiceDB;
 
 import java.sql.SQLException;
 import java.util.List;
+
+import static Validations.UserValidation.CNPValidation;
+import static Validations.UserValidation.nameValidation;
 
 public class UserServiceDBImpl implements UserServiceDB {
     private UserRepository userRepository;
@@ -26,8 +31,14 @@ public class UserServiceDBImpl implements UserServiceDB {
     @Override
     public void addUser(User user) {
         try {
-            userRepository.addUser(user);
-        } catch (SQLException exception) {
+            if (!CNPValidation(user.getCNP())) {
+                throw new InvalidCNPException("CNP must have 13 digits!");
+            } else if (!nameValidation(user.getLastName(), user.getFirstName())) {
+                throw new InvalidNameException("Last name and first name cannot have numbers!");
+            } else {
+                userRepository.addUser(user);
+            }
+        } catch (SQLException | InvalidCNPException | InvalidNameException exception) {
             System.out.println(exception.getMessage());
         }
     }
@@ -35,7 +46,13 @@ public class UserServiceDBImpl implements UserServiceDB {
     @Override
     public void addUser(String lastName, String firstName, String CNP, String address) {
         try {
-            userRepository.addUser(lastName, firstName, CNP, address);
+            if (!CNPValidation(CNP)) {
+                throw new InvalidCNPException("CNP must have 13 digits!");
+            } else if (!nameValidation(lastName, firstName)) {
+                throw new InvalidNameException("Last name and first name cannot have numbers!");
+            } else {
+                userRepository.addUser(lastName, firstName, CNP, address);
+            }
         } catch (SQLException exception) {
             System.out.println(exception.getMessage());
         }
