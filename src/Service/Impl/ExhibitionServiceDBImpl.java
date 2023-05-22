@@ -47,7 +47,7 @@ public class ExhibitionServiceDBImpl implements ExhibitionServiceDB {
     public List<Exhibition> getAllExhibitions() {
         try {
             List<Exhibition> exhibitions = exhibitionRepository.getAllExhibitions();
-            if (exhibitions == null)
+            if (exhibitions.size() < 1)
                 throw new ExhibitionsNotFoundException("Exhibitions list is empty.");
             return exhibitions;
         } catch (SQLException | ExhibitionsNotFoundException exception) {
@@ -73,7 +73,7 @@ public class ExhibitionServiceDBImpl implements ExhibitionServiceDB {
     public List<Exhibition> getExhibition(String name) {
         try {
             List<Exhibition> exhibitions = exhibitionRepository.getExhibition(name);
-            if (exhibitions == null)
+            if (exhibitions.size() < 1)
                 throw new ExhibitionNotFoundException("The requested exhibition was not found.");
             return exhibitions;
         } catch (SQLException | ExhibitionNotFoundException exception) {
@@ -86,7 +86,7 @@ public class ExhibitionServiceDBImpl implements ExhibitionServiceDB {
     public List<Exhibition> getExhibitionByMuseumId(int id) {
         try {
             List<Exhibition> exhibitions = exhibitionRepository.getExhibitionByMuseumId(id);
-            if (exhibitions == null)
+            if (exhibitions.size() < 1)
                 throw new ExhibitionsNotFoundException("There are no exhibitions with the given museumId.");
             return exhibitions;
         } catch (SQLException | ExhibitionsNotFoundException exception) {

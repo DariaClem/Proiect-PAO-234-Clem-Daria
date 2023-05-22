@@ -6,7 +6,6 @@ import Repositories.MuseumRepository;
 import Repositories.UserRepository;
 import Service.Impl.*;
 
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 public class Main {
@@ -105,7 +104,7 @@ public class Main {
         System.out.println(exhibitServiceDB.getExhibit(70));
         System.out.println();
 
-        System.out.println(userServiceDB.getUser("Clem", "Daria"));
+        System.out.println(userServiceDB.getUser("Cleeem", "Daria"));
         System.out.println(museumServiceDB.getMuseum("Muzeul Național de Artă al României"));
         System.out.println(exhibitionServiceDB.getExhibition("Expoziția 'Epoca medievală și arta cavalerilor'"));
         System.out.println(exhibitServiceDB.getExhibit("Statuia lui Venus"));

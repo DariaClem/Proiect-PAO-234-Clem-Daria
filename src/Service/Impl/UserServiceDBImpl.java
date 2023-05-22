@@ -45,7 +45,7 @@ public class UserServiceDBImpl implements UserServiceDB {
     public List<User> getAllUsers() {
         try {
             List<User> users = userRepository.getAllUsers();
-            if (users == null)
+            if (users.size() < 1)
                 throw new UsersNotFoundException("Users list is empty.");
             return users;
         } catch (SQLException | UsersNotFoundException exception) {
@@ -71,7 +71,7 @@ public class UserServiceDBImpl implements UserServiceDB {
     public List<User> getUser(String lastName, String firstName) {
         try {
             List<User> users = userRepository.getUser(lastName, firstName);
-            if (users == null)
+            if (users.size() < 1)
                 throw new UserNotFoundException("The requested user was not found.");
             return users;
         } catch (SQLException | UserNotFoundException exception) {

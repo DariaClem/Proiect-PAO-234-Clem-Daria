@@ -32,7 +32,6 @@ public class UserRepository {
         List<User> users = new ArrayList<>();
 
         while (resultSet.next()) {
-
             User user = createUser(resultSet);
             users.add(user);
         }

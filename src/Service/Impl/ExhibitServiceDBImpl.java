@@ -45,7 +45,7 @@ public class ExhibitServiceDBImpl implements ExhibitServiceDB {
     public List<Exhibit> getAllExhibits() {
         try {
             List<Exhibit> exhibits = exhibitRepository.getAllExhibits();
-            if (exhibits == null)
+            if (exhibits.size() < 1)
                 throw new ExhibitsNotFoundException("Exhibits list is empty.");
             return exhibits;
         } catch (SQLException | ExhibitsNotFoundException exception) {
@@ -71,7 +71,7 @@ public class ExhibitServiceDBImpl implements ExhibitServiceDB {
     public List<Exhibit> getExhibit(String name) {
         try {
             List<Exhibit> exhibits = exhibitRepository.getExhibit(name);
-            if (exhibits == null)
+            if (exhibits.size() < 1)
                 throw new ExhibitNotFoundException("The requested exhibit was not found.");
             return exhibits;
         } catch (SQLException | ExhibitNotFoundException exception) {
@@ -84,7 +84,7 @@ public class ExhibitServiceDBImpl implements ExhibitServiceDB {
     public List<Exhibit> getExhibitByExhibitionId(int id) {
         try {
             List<Exhibit> exhibits = exhibitRepository.getExhibitByExhibitionId(id);
-            if (exhibits == null)
+            if (exhibits.size() < 1)
                 throw new ExhibitsNotFoundException("There are no exhibits with the given exhibitionId.");
             return exhibits;
         } catch (SQLException | ExhibitsNotFoundException exception) {

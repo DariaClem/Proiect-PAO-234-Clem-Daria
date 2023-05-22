@@ -45,7 +45,7 @@ public class MuseumServiceDBImpl implements MuseumServiceDB {
     public List<Museum> getAllMuseums() {
         try {
             List<Museum> museums = museumRepository.getAllMuseums();
-            if (museums == null)
+            if (museums.size() < 1)
                 throw new MuseumsNotFoundException("Museums list is empty.");
             return museums;
         } catch (SQLException | MuseumsNotFoundException exception) {
@@ -71,10 +71,10 @@ public class MuseumServiceDBImpl implements MuseumServiceDB {
     public List<Museum> getMuseum(String name) {
         try {
             List<Museum> museums =  museumRepository.getMuseum(name);
-            if (museums == null)
+            if (museums.size() < 1)
                 throw new MuseumNotFoundException("The requested museum was not found.");
             return museums;
-        } catch (SQLException exception) {
+        } catch (SQLException | MuseumNotFoundException exception) {
             System.out.println(exception.getMessage());
         }
         return null;
